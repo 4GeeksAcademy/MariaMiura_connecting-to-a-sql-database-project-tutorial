@@ -1,0 +1,13 @@
+                           Table "public.authors"
+      Column       |          Type          | Collation | Nullable | Default 
+-------------------+------------------------+-----------+----------+---------
+ author_id         | integer                |           | not null | 
+ first_name        | character varying(100) |           | not null | 
+ middle_name       | character varying(50)  |           |          | 
+ last_name         | character varying(100) |           |          | 
+ confirmando_datos | boolean                |           |          | 
+Indexes:
+    "authors_pkey" PRIMARY KEY, btree (author_id)
+Referenced by:
+    TABLE "book_authors" CONSTRAINT "fk_author" FOREIGN KEY (author_id) REFERENCES authors(author_id) ON DELETE CASCADE
+
